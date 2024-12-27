@@ -2,6 +2,7 @@
 #define MODULE_SYSTEM_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 typedef char* ms_identifier;
 typedef uint32_t ms_int;
