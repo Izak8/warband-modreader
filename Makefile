@@ -10,8 +10,8 @@ CC			= cc
 CFLAGS 		= -std=c99 -Wall
 
 # Basic Macros
-BIN		= msdecomp
-OBJ		= msdecomp.o
+BIN		= modreader
+OBJ		= modreader.o
 SRC		= $(OBJ:%.o=%.c)
 DEP		= $(OBJ:%.o=%.d)
 
