@@ -2,6 +2,9 @@
 .SUFFIXES:
 .PHONY: clean all
 
+# Recommend to run this makefile using POSIX compliant make utility such as
+# pdpmake https://frippery.org/make/
+
 # C Compiler, use cc symlink by default
 CC			= cc
 CFLAGS 		= -std=c99 -Wall
@@ -30,5 +33,6 @@ clean:
 	rm -fr $(OBJ)
 	rm -fr $(DEP)
 
-# Make on BSD requires this for some reason
+# FreeBSD Make seemingly does not remake on include lines for non-existent files
+# The -include will ignore errors regarding non-existent files
 -include $(DEP)
