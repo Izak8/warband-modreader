@@ -7,7 +7,7 @@
 typedef char* ms_identifier;
 typedef uint32_t ms_int;
 typedef ms_int ms_index;
-typedef float ms_trig_interval;
+typedef float ms_ti_interval;
 
 /* Strings */
 typedef struct ms_string {
@@ -36,7 +36,7 @@ typedef struct ms_comp_script {
 
 /* Simple Triggers */
 typedef struct ms_comp_simple_trigger {
-    ms_trig_interval interval;
+    ms_ti_interval interval;
     ms_index blocklen;
     ms_comp_statement* block;
 }ms_comp_simple_trigger;
@@ -47,9 +47,9 @@ typedef struct ms_comp_simple_trigger {
 #define TI_ONCE 100000000.000000
 
 typedef struct ms_comp_trigger {
-    ms_trig_interval check_interval;
-    ms_trig_interval delay_interval;
-    ms_trig_interval rearm_interval;
+    ms_ti_interval check_interval;
+    ms_ti_interval delay_interval;
+    ms_ti_interval rearm_interval;
 
     ms_index blocklen_cond;
     ms_comp_statement* condblock;
