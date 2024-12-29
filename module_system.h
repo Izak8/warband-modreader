@@ -10,7 +10,7 @@ typedef ms_int ms_index;
 typedef float ms_ti_interval;
 
 /* Strings */
-typedef struct ms_string {
+typedef struct ms_comp_string {
     ms_identifier identifier;
     char* string;
 }ms_string;
@@ -58,5 +58,30 @@ typedef struct ms_comp_trigger {
     ms_comp_statement* consblock;
 
 }ms_comp_trigger;
+
+/* Factions */
+typedef enum ms_fac_flags {
+    FF_ALWAYS_HIDE_LABEL = 0x1
+}ms_fac_flags;
+
+/* Compiled relations list is a map which relates faction_id to a relation */
+typedef struct ms_comp_relation_record {
+    char* identifier;
+    float relation;
+}ms_comp_relation_record;
+
+/* 32-bit Hex Colour Codes */
+typedef uint32_t ms_colour;
+/* Default faction colour is grey */
+#define FAC_COL_DEFAULT 0xAAAAAA
+
+typedef struct ms_comp_factions {
+    char* identifier;
+    char* name;
+    ms_fac_flags flags;
+    ms_colour colour;
+    float coherence;
+    ms_comp_relation_record* relations;
+}ms_comp_factions;
 
 #endif
