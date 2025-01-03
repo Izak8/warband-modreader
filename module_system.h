@@ -59,9 +59,11 @@ typedef struct ms_comp_trigger {
 
 }ms_comp_trigger;
 
+
 /* Factions */
 typedef enum ms_fac_flags {
     FF_ALWAYS_HIDE_LABEL = 0x1
+    /* TODO: Relation mask */
 }ms_fac_flags;
 
 /* Compiled relations list is a map which relates faction_id to a relation */
@@ -87,5 +89,20 @@ typedef struct ms_comp_factions {
     ms_comp_relation_record* relations;
     /*Rank list? */
 }ms_comp_factions;
+
+
+/* Skills */
+
+/* TODO */
+typedef int ms_skill_flags;
+
+typedef struct ms_comp_skill {
+    char* identifier;
+    char* name;
+    /* TODO */
+    ms_skill_flags flags;
+    ms_int max_level;
+    char* description;
+}ms_comp_skill;
 
 #endif
