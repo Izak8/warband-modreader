@@ -13,7 +13,7 @@ typedef float ms_ti_interval;
 typedef struct ms_comp_string {
     ms_identifier identifier;
     char* string;
-}ms_string;
+}ms_comp_string;
 
 /* Scripts */
 
@@ -25,14 +25,14 @@ typedef struct ms_comp_statement {
     ms_index opcode;
     ms_int narg;
     ms_comp_argument* args;
-}ms_statement;
+}ms_comp_statement;
 
 /* Compiled script tuple "<identifier> -1\n <length> <STATEMENT>*"*/
 typedef struct ms_comp_script {
     ms_identifier identifier;
     ms_index blocklen;
-    ms_statement* block;
-}ms_script;
+    ms_comp_statement* block;
+}ms_comp_script;
 
 /* Simple Triggers */
 typedef struct ms_comp_simple_trigger {
@@ -112,5 +112,5 @@ typedef struct ms_comp_skill {
     char* description;
 }ms_comp_skill;
 
-
+/* TODO: Skins */
 #endif
