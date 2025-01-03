@@ -1,9 +1,9 @@
+# Recommend to run this makefile using POSIX-compliant make utility such as
+# pdpmake https://frippery.org/make/
+
 .POSIX:
 .SUFFIXES:
 .PHONY: clean all
-
-# Recommend to run this makefile using POSIX compliant make utility such as
-# pdpmake https://frippery.org/make/
 
 # C Compiler, use cc symlink by default
 CC			= cc
@@ -20,10 +20,11 @@ all: $(BIN)
 $(BIN): $(DEP) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(BIN)
 
-# Suffix-rules
+# Suffix rule for dependency files
 .SUFFIXES: .d .c
 .c.d:
 	$(CC) -MM $< -o $@
+# Suffix rule for objects
 .SUFFIXES: .c .o
 .c.o:
 	$(CC) $(CFLAGS) -c $<
