@@ -94,15 +94,23 @@ typedef struct ms_comp_factions {
 /* Skills */
 
 /* TODO */
-typedef int ms_skill_flags;
+typedef enum ms_skl_flags {
+    SF_BASE_ATT_STR = 0x0,
+    SF_BASE_ATT_AGI = 0x1,
+    SF_BASE_ATT_INT = 0x2,
+    SF_BASE_ATT_CHA = 0x3,
+    SF_EFFECTS_PARTY = 0x10,
+    SF_INACTIVE = 0X100
+}ms_skl_flags;
 
 typedef struct ms_comp_skill {
     char* identifier;
     char* name;
     /* TODO */
-    ms_skill_flags flags;
+    ms_skl_flags flags;
     ms_int max_level;
     char* description;
 }ms_comp_skill;
+
 
 #endif
