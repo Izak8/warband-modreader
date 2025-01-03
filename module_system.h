@@ -75,6 +75,9 @@ typedef uint32_t ms_colour;
 /* Default faction colour is grey */
 #define FAC_COL_DEFAULT 0xAAAAAA
 
+/* Maximum factions constant */
+#define MS_FACTION_MAX 128
+
 typedef struct ms_comp_factions {
     char* identifier;
     char* name;
@@ -82,6 +85,7 @@ typedef struct ms_comp_factions {
     ms_colour colour;
     float coherence;
     ms_comp_relation_record* relations;
+    /*Rank list? */
 }ms_comp_factions;
 
 #endif
