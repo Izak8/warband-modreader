@@ -11,7 +11,7 @@ CFLAGS 		= -std=c99 -Wall
 
 # Basic Macros
 BIN		= modreader
-OBJ		= modreader.o
+OBJ		= modreader.o context.o
 SRC		= $(OBJ:%.o=%.c)
 DEP		= $(OBJ:%.o=%.d)
 
